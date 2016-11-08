@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class BucketListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var textField: UITextField!
     
@@ -35,12 +35,19 @@ class ViewController: UIViewController, UITableViewDataSource {
         // return cell so that Table View knows what to draw in each row
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Section: \(indexPath.section) and row \(indexPath.row)")
+        tasks.remove(at: indexPath.row)
+        tableView.reloadData()
+    }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
+        tableView.delegate = self
 
     }
 
