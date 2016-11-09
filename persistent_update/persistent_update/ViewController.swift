@@ -31,27 +31,18 @@ class ViewController: UITableViewController, CancelButtonDelegate, MissionDetail
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // Adding Method
     func missionDetailViewController(controller: MissionDetailViewController, didFinishAddingMission mission: String) {
         dismissViewControllerAnimated(true, completion: nil)
-//        missions.append(mission)
-        print(managedObjectContext)
-        
+
         let entity = NSEntityDescription.entityForName("Mission", inManagedObjectContext: managedObjectContext)
-        print("============")
-        print(entity)
         let mission_1 = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
-        print(mission_1)
-        print("thisi si misison")
-        print(mission)
-        print(missions)
+        
         mission_1.setValue(mission, forKey: "details")
         if managedObjectContext.hasChanges{
             do {
                 try managedObjectContext.save()
-                managedObjectContext.deletedObjects
-                print(managedObjectContext)
                 print("Success")
-                print(missions)
             } catch {
                 print("\(error)")
             }
@@ -60,16 +51,34 @@ class ViewController: UITableViewController, CancelButtonDelegate, MissionDetail
         tableView.reloadData()
         
         print(missions)
+        print("end adding")
     }
     
+    // Editing Method
     func missionDetailViewController(controller: MissionDetailViewController, didFinishEditingMission mission: Mission, atIndexPath indexPath: Int) {
+        print("editing)")
+        print(mission)
+        
         dismissViewControllerAnimated(true, completion: nil)
-//        missions[indexPath] = mission
+        
+        let entity = NSEntityDescription.entityForName("Mission", inManagedObjectContext: managedObjectContext)
+        let mission_1 = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
+        
+        mission_1.setValue(mission.details!, forKey: "details")
+        if managedObjectContext.hasChanges{
+            do {
+                try managedObjectContext.save()
+                print("Success")
+            } catch {
+                print("\(error)")
+            }
+        }
+        
+        fetchAllMission()
         
         tableView.reloadData()
+        print("end editing")
     }
-    
-//    var missions = ["Mission 1", "Mission 2", "Mission 3"]
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return missions.count
@@ -77,26 +86,22 @@ class ViewController: UITableViewController, CancelButtonDelegate, MissionDetail
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FirstCell")!
-//        cell.textLabel?.text = missions[indexPath.row]
         cell.textLabel?.text = missions[indexPath.row].details
         return cell
     }
     
     func fetchAllMission(){
-        //        let missionRequest = NSFetchRequest(entityName: "Mission")
         let userRequets = NSFetchRequest(entityName: "Mission")
         print(userRequets)
         do {
             // get the results by executing the fetch request we made earlier
             let results = try managedObjectContext.executeFetchRequest(userRequets)
-            print(results)
-            
-            
+            for i in results {
+                print ("one by one", i.details)
+            }
             // downcast the results as an array of Mission objects
-            
-            let missions = results as? [Mission]
+            missions = (results as? [Mission])!
             print(missions)
-            print(93)
         } catch {
             // print the error if it is caught (Swift automatically saves the error in "error")
             print("\(error)")
@@ -105,9 +110,7 @@ class ViewController: UITableViewController, CancelButtonDelegate, MissionDetail
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         fetchAllMission()
-        print(missions)
     }
 
     override func didReceiveMemoryWarning() {

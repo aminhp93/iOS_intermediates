@@ -33,8 +33,8 @@ class MissionDetailViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let unwrappedMission = missionToEdit{
-            inputText.text = unwrappedMission.details!
+        if missionToEdit != nil {
+            inputText.text = String(missionToEdit!.details!)
         }
     }
 }
