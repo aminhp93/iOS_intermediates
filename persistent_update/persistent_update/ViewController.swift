@@ -12,6 +12,7 @@ import CoreData
 class ViewController: UITableViewController, CancelButtonDelegate, MissionDetailViewControllerDelegate {
     var editSegueMode = false
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    var missions = [Mission]()
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let navigationController = segue.destinationViewController as! UINavigationController
@@ -33,23 +34,31 @@ class ViewController: UITableViewController, CancelButtonDelegate, MissionDetail
     func missionDetailViewController(controller: MissionDetailViewController, didFinishAddingMission mission: String) {
         dismissViewControllerAnimated(true, completion: nil)
 //        missions.append(mission)
+        print(managedObjectContext)
+        
         let entity = NSEntityDescription.entityForName("Mission", inManagedObjectContext: managedObjectContext)
         print("============")
         print(entity)
         let mission_1 = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
+        print(mission_1)
+        print("thisi si misison")
         print(mission)
+        print(missions)
         mission_1.setValue(mission, forKey: "details")
         if managedObjectContext.hasChanges{
             do {
                 try managedObjectContext.save()
+                managedObjectContext.deletedObjects
                 print(managedObjectContext)
                 print("Success")
+                print(missions)
             } catch {
                 print("\(error)")
             }
         }
         fetchAllMission()
         tableView.reloadData()
+        
         print(missions)
     }
     
@@ -61,7 +70,6 @@ class ViewController: UITableViewController, CancelButtonDelegate, MissionDetail
     }
     
 //    var missions = ["Mission 1", "Mission 2", "Mission 3"]
-    var missions = [Mission]()
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return missions.count
@@ -77,11 +85,18 @@ class ViewController: UITableViewController, CancelButtonDelegate, MissionDetail
     func fetchAllMission(){
         //        let missionRequest = NSFetchRequest(entityName: "Mission")
         let userRequets = NSFetchRequest(entityName: "Mission")
+        print(userRequets)
         do {
             // get the results by executing the fetch request we made earlier
             let results = try managedObjectContext.executeFetchRequest(userRequets)
+            print(results)
+            
+            
             // downcast the results as an array of Mission objects
+            
             let missions = results as? [Mission]
+            print(missions)
+            print(93)
         } catch {
             // print the error if it is caught (Swift automatically saves the error in "error")
             print("\(error)")
