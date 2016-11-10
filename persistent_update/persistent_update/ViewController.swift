@@ -56,15 +56,12 @@ class ViewController: UITableViewController, CancelButtonDelegate, MissionDetail
     
     // Editing Method
     func missionDetailViewController(controller: MissionDetailViewController, didFinishEditingMission mission: Mission, atIndexPath indexPath: Int) {
-        print("editing)")
-        print(mission)
-        
         dismissViewControllerAnimated(true, completion: nil)
+//        
+//        let entity = NSEntityDescription.entityForName("Mission", inManagedObjectContext: managedObjectContext)
+//        let mission_1 = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
+//        mission_1.setValue(mission.details!, forKey: "details")
         
-        let entity = NSEntityDescription.entityForName("Mission", inManagedObjectContext: managedObjectContext)
-        let mission_1 = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
-        
-        mission_1.setValue(mission.details!, forKey: "details")
         if managedObjectContext.hasChanges{
             do {
                 try managedObjectContext.save()
@@ -124,9 +121,19 @@ class ViewController: UITableViewController, CancelButtonDelegate, MissionDetail
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        missions.removeAtIndex(indexPath.row)
+        print(missions[indexPath.row])
+        print("_________")
+        managedObjectContext.deleteObject(missions[indexPath.row])
+//        missions.removeAtIndex(indexPath.row)
+        do {
+            try managedObjectContext.save()
+        
+        } catch {
+            print("\(error)")
+        }
+        
+        fetchAllMission()
         tableView.reloadData()
     }
-
 }
 

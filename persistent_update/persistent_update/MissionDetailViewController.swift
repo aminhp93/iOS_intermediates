@@ -23,9 +23,11 @@ class MissionDetailViewController: UITableViewController{
     
     @IBAction func doneBarButtonPressed(sender: UIBarButtonItem) {
         if var mission = missionToEdit{
+            print("Should be editing")
             mission.details = inputText.text!
             delegate?.missionDetailViewController(self, didFinishEditingMission: mission, atIndexPath: missionToEditIndexPath!)
         } else {
+            print("not in the editing mode anymore")
             let mission = inputText.text!
             delegate?.missionDetailViewController(self, didFinishAddingMission: mission)
         }
