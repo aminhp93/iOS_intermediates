@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bcg-QX-1mN" id="ffM-RU-F2d">
-                                    <rect key="frame" x="0.0" y="0.0" width="308" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="308" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CiV-kq-OfK">
@@ -149,6 +149,9 @@
                                 <rect key="frame" x="141" y="362" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add a picture"/>
+                                <connections>
+                                    <action selector="addPhoto:" destination="IxE-Xz-azo" eventType="touchUpInside" id="IJA-7X-vcP"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add name here" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oRl-Q3-Bdq">
                                 <rect key="frame" x="128" y="144" width="119" height="30"/>
@@ -175,6 +178,7 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="6Ak-Kd-KPs" id="zVk-AT-RFW"/>
                         <outlet property="nameLabel" destination="oRl-Q3-Bdq" id="Mha-7m-etr"/>
+                        <outlet property="photoImageView" destination="Wx6-eZ-woc" id="gaV-zS-Gwl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6LU-zi-xpl" userLabel="First Responder" sceneMemberID="firstResponder"/>

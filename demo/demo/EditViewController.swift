@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditViewController: UIViewController {
+class EditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var cancelButton:CancelButtonDelegate?
     var delegate: EditViewControllerDelegate?
     var nameLabel_2: String?
@@ -32,11 +32,30 @@ class EditViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         nameLabel.text = nameLabel_2
         descriptionLabel.text = descriptionLabel_2
+        self.view.addSubview(photoImageView)
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBOutlet weak var photoImageView: UIImageView!
+    
+    @IBAction func addPhoto(sender: UIButton) {
+        var photoPicker = UIImagePickerController()
+        photoPicker.delegate = self
+        photoPicker.sourceType = .PhotoLibrary
+        
+        self.presentViewController(photoPicker, animated: true, completion: nil)
+
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        photoImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        self.dismissViewControllerAnimated(false, completion: nil)
+    }
+    
 }
 
