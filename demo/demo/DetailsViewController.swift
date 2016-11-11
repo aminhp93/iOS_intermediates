@@ -46,8 +46,6 @@ class DetailsViewController: UIViewController, CancelButtonDelegate, EditViewCon
     }
     
     func editViewController(controller: EditViewController, didFinishiAdding mission: [String]) {
-        print("hello")
-        print(mission)
         name.text = mission[0]
         textInput.text = mission[1]
         dismissViewControllerAnimated(true, completion: nil)
@@ -57,7 +55,7 @@ class DetailsViewController: UIViewController, CancelButtonDelegate, EditViewCon
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         name.text = puppy_name
-//        imageView.image = UIImage(named: puppy_image!)
+        // imageView.image = UIImage(named: puppy_image!)
         textInput.text = puppy_description
     }
     

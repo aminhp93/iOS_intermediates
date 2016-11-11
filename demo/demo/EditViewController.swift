@@ -54,6 +54,8 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         photoImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        print(photoImageView)
+        print(photoImageView.image)
         self.dismissViewControllerAnimated(false, completion: nil)
     }
     

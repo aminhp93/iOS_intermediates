@@ -53,6 +53,9 @@ class MainPageController: UITableViewController, CancelButtonDelegate, EditViewC
     var puppies = ["dog1", "dog2", "dog3"]
     var puppie_description = ["descrip1", "descript2", "descript3"]
     var puppie_images = ["dog1", "dog2", "dog3"]
+    var picture = [UIImage]()
+
+    
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return puppies.count
@@ -61,9 +64,8 @@ class MainPageController: UITableViewController, CancelButtonDelegate, EditViewC
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CustomCell")!
         cell.textLabel?.text = puppies[indexPath.row]
-        
 //        cell.imageView?.image = UIImage(named: puppie_images[indexPath.row])
-        
+        cell.imageView?.image = UIImage(contentsOfFile: "<UIImage: 0x608000284a10> size {4288, 2848} orientation 0 scale 1.000000")
         return cell
     }
     
