@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UITableViewController, CancelButtonDelegate, MissionDetailViewControllerDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("line 14", sender)
         if segue.identifier == "AddNewMission"{
+            
             let navigationController = segue.destination as! UINavigationController
             let controller = navigationController.topViewController as! MissionDetailViewController
             controller.cancelButtonDelegate = self

@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		270E63781DD3C24200DFDA7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E63771DD3C24200DFDA7C /* AppDelegate.swift */; };
 		270E637A1DD3C24200DFDA7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E63791DD3C24200DFDA7C /* ViewController.swift */; };
-		270E637D1DD3C24200DFDA7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270E637B1DD3C24200DFDA7C /* Main.storyboard */; };
 		270E637F1DD3C24200DFDA7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270E637E1DD3C24200DFDA7C /* Assets.xcassets */; };
 		270E63821DD3C24200DFDA7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270E63801DD3C24200DFDA7C /* LaunchScreen.storyboard */; };
 		270E638D1DD3C24200DFDA7C /* my_dogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E638C1DD3C24200DFDA7C /* my_dogTests.swift */; };
 		270E63981DD3C24300DFDA7C /* my_dogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E63971DD3C24300DFDA7C /* my_dogUITests.swift */; };
 		270E63A61DD3C89800DFDA7C /* NewDogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270E63A51DD3C89800DFDA7C /* NewDogController.swift */; };
+		2735BD251DD513AE00D9487B /* NewDogControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2735BD241DD513AE00D9487B /* NewDogControllerDelegate.swift */; };
+		2735BD2B1DD52FA700D9487B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2735BD291DD52FA700D9487B /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,6 @@
 		270E63741DD3C24200DFDA7C /* my_dog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = my_dog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		270E63771DD3C24200DFDA7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		270E63791DD3C24200DFDA7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		270E637C1DD3C24200DFDA7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		270E637E1DD3C24200DFDA7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		270E63811DD3C24200DFDA7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		270E63831DD3C24200DFDA7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		270E63971DD3C24300DFDA7C /* my_dogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_dogUITests.swift; sourceTree = "<group>"; };
 		270E63991DD3C24300DFDA7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		270E63A51DD3C89800DFDA7C /* NewDogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDogController.swift; sourceTree = "<group>"; };
+		2735BD241DD513AE00D9487B /* NewDogControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDogControllerDelegate.swift; sourceTree = "<group>"; };
+		2735BD2A1DD52FA700D9487B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +103,9 @@
 			children = (
 				270E63771DD3C24200DFDA7C /* AppDelegate.swift */,
 				270E63791DD3C24200DFDA7C /* ViewController.swift */,
+				2735BD241DD513AE00D9487B /* NewDogControllerDelegate.swift */,
 				270E63A51DD3C89800DFDA7C /* NewDogController.swift */,
-				270E637B1DD3C24200DFDA7C /* Main.storyboard */,
+				2735BD291DD52FA700D9487B /* Main.storyboard */,
 				270E637E1DD3C24200DFDA7C /* Assets.xcassets */,
 				270E63801DD3C24200DFDA7C /* LaunchScreen.storyboard */,
 				270E63831DD3C24200DFDA7C /* Info.plist */,
@@ -235,9 +238,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2735BD2B1DD52FA700D9487B /* Main.storyboard in Resources */,
 				270E63821DD3C24200DFDA7C /* LaunchScreen.storyboard in Resources */,
 				270E637F1DD3C24200DFDA7C /* Assets.xcassets in Resources */,
-				270E637D1DD3C24200DFDA7C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2735BD251DD513AE00D9487B /* NewDogControllerDelegate.swift in Sources */,
 				270E637A1DD3C24200DFDA7C /* ViewController.swift in Sources */,
 				270E63A61DD3C89800DFDA7C /* NewDogController.swift in Sources */,
 				270E63781DD3C24200DFDA7C /* AppDelegate.swift in Sources */,
@@ -300,20 +304,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		270E637B1DD3C24200DFDA7C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				270E637C1DD3C24200DFDA7C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		270E63801DD3C24200DFDA7C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				270E63811DD3C24200DFDA7C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2735BD291DD52FA700D9487B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2735BD2A1DD52FA700D9487B /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -509,6 +513,7 @@
 				270E639E1DD3C24300DFDA7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		270E639F1DD3C24300DFDA7C /* Build configuration list for PBXNativeTarget "my_dogTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +522,7 @@
 				270E63A11DD3C24300DFDA7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		270E63A21DD3C24300DFDA7C /* Build configuration list for PBXNativeTarget "my_dogUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +531,7 @@
 				270E63A41DD3C24300DFDA7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

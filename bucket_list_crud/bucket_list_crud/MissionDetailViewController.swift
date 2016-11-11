@@ -15,7 +15,9 @@ class MissionDetailViewController: UITableViewController{
     var missionToEditIndexPath: Int?
     
     override func viewDidLoad() {
-        newMissionTextField.text =  missionToEdit!
+        if missionToEdit != nil {
+            newMissionTextField.text =  missionToEdit!
+        }
     }
     
     @IBOutlet weak var newMissionTextField: UITextField!

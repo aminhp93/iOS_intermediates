@@ -10,7 +10,9 @@ import UIKit
 
 class NewDogController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-    var photoImageView = UIImageView(frame: CGRectMake(40, 40, 200, 200))
+    var delegate: NewDogControllerDelegate?
+    
+    @IBOutlet weak var photoImageView: UIImageView!
     
     @IBAction func addPhoto(sender: UIButton) {
         var photoPicker = UIImagePickerController()
@@ -18,6 +20,11 @@ class NewDogController: UIViewController, UIImagePickerControllerDelegate, UINav
         photoPicker.sourceType = .PhotoLibrary
         
         self.presentViewController(photoPicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func doneButton(sender: UIButton) {
+        let new_dog = photoImageView.image
+        delegate?.newDogController(self, didFinishAddingDog: new_dog!)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
