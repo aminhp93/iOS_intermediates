@@ -17,9 +17,6 @@
 		2735BD671DD537D300D9487B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2735BD661DD537D300D9487B /* DetailsViewController.swift */; };
 		2735BD691DD537EC00D9487B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2735BD681DD537EC00D9487B /* EditViewController.swift */; };
 		2735BD6B1DD53EEE00D9487B /* CancelButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2735BD6A1DD53EEE00D9487B /* CancelButtonDelegate.swift */; };
-		2735BD6F1DD540B200D9487B /* dog1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2735BD6C1DD540B200D9487B /* dog1.png */; };
-		2735BD701DD540B200D9487B /* dog2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2735BD6D1DD540B200D9487B /* dog2.png */; };
-		2735BD711DD540B200D9487B /* dog3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2735BD6E1DD540B200D9487B /* dog3.png */; };
 		2735BD731DD5434800D9487B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2735BD721DD5434800D9487B /* CustomCell.swift */; };
 		2773BFE21DD654F500F9300C /* EditViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2773BFE11DD654F500F9300C /* EditViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -58,9 +55,6 @@
 		2735BD661DD537D300D9487B /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		2735BD681DD537EC00D9487B /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		2735BD6A1DD53EEE00D9487B /* CancelButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelButtonDelegate.swift; sourceTree = "<group>"; };
-		2735BD6C1DD540B200D9487B /* dog1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dog1.png; path = ../../../../../Desktop/dog1.png; sourceTree = "<group>"; };
-		2735BD6D1DD540B200D9487B /* dog2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dog2.png; path = ../../../../../Desktop/dog2.png; sourceTree = "<group>"; };
-		2735BD6E1DD540B200D9487B /* dog3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dog3.png; path = ../../../../../Desktop/dog3.png; sourceTree = "<group>"; };
 		2735BD721DD5434800D9487B /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		2773BFE11DD654F500F9300C /* EditViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,9 +114,6 @@
 				2735BD681DD537EC00D9487B /* EditViewController.swift */,
 				2773BFE11DD654F500F9300C /* EditViewControllerDelegate.swift */,
 				2735BD3C1DD532B300D9487B /* Main.storyboard */,
-				2735BD6C1DD540B200D9487B /* dog1.png */,
-				2735BD6D1DD540B200D9487B /* dog2.png */,
-				2735BD6E1DD540B200D9487B /* dog3.png */,
 				2735BD3F1DD532B300D9487B /* Assets.xcassets */,
 				2735BD411DD532B300D9487B /* LaunchScreen.storyboard */,
 				2735BD441DD532B300D9487B /* Info.plist */,
@@ -257,10 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2735BD431DD532B300D9487B /* LaunchScreen.storyboard in Resources */,
-				2735BD701DD540B200D9487B /* dog2.png in Resources */,
-				2735BD711DD540B200D9487B /* dog3.png in Resources */,
 				2735BD401DD532B300D9487B /* Assets.xcassets in Resources */,
-				2735BD6F1DD540B200D9487B /* dog1.png in Resources */,
 				2735BD3E1DD532B300D9487B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -65,7 +65,7 @@ class MainPageController: UITableViewController, CancelButtonDelegate, EditViewC
         let cell = tableView.dequeueReusableCellWithIdentifier("CustomCell")!
         cell.textLabel?.text = puppies[indexPath.row]
 //        cell.imageView?.image = UIImage(named: puppie_images[indexPath.row])
-        cell.imageView?.image = UIImage(contentsOfFile: "<UIImage: 0x608000284a10> size {4288, 2848} orientation 0 scale 1.000000")
+//        cell.imageView?.image = UIImage(contentsOfFile: "<UIImage: 0x608000284a10> size {4288, 2848} orientation 0 scale 1.000000")
         return cell
     }
     
